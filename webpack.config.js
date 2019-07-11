@@ -4,7 +4,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 module.exports = {
     entry:'./src/app.js',
     output:{
-        path: path.resolve(__dirname, 'build'),
+        path: path.join(__dirname, './build'),
         filename:'bundle.js'
     },
     module:{
@@ -26,9 +26,5 @@ module.exports = {
     devServer: {    
         contentBase: "./build",  
     },
-    plugins: [    
-        new HtmlWebpackPlugin({      
-            template: path.resolve('./build/index.html'),    
-        }),  
-    ],
+    plugins: [new HtmlWebpackPlugin()]
 };
